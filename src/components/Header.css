@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.header_text {
+    /* flex-grow: 0.8; */
+    font-weight: 500;
+    width: 50%;
+}
+
+.header_toggle {
+    margin-right: 50%;
+    width: 50%;
+}
