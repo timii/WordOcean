@@ -1,0 +1,15 @@
+.input {
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input > * {
+    margin: 0 0.2rem;
+}
+
+.select {
+    width: 200px;
+    color: #282C34;
+}
