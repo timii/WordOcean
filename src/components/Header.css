@@ -1,17 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap');
+
+
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem;
+    padding: 1.5em 0 1em;
+    position: relative;
 }
 
 .header_text {
-    /* flex-grow: 0.8; */
+    font-size: 5em;
     font-weight: 500;
-    width: 50%;
+    width: 100%;
+    font-family: "Orelega One", cursive;
+    letter-spacing: 1.5px;
 }
 
-.header_toggle {
-    margin-right: 50%;
-    width: 50%;
+.header_subtext {
+    font-size: 1.5em;
+    margin: 0;
+    font-family: "Orelega One", cursive;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+}
+
+#darkModeToggle {
+    position: absolute;
+    top: 5vh;
+    right: 3vw;
 }
