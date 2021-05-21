@@ -1,10 +1,27 @@
-# Word Ocean
+<!-- # Word Ocean -->
 
-Lookup word definitions and additional information.
+<div align="center">
+  <br>
+  <img src="public/readme_banner.png" alt="Word Ocean" width="70%">
+  <!-- <br> -->
+  <!-- Word Ocean -->
+  <!-- <br> -->
+</div>
 
-Just a fun project to play around with React.
+<h2 align="center">Lookup word definitions and additional information in different languages.</h2>
+<br>
 
-It uses the [freeDictionaryAPI](https://dictionaryapi.dev/) to get the word definitions. Go check out his [GitHub Repo](https://github.com/meetDeveloper/freeDictionaryAPI) to support the free usage of the API.
+(Picture of the Website)
+
+## How To Use
+
+Choose a language from the [supported languages](#supported-languages) and the word you want to know the definition of and press "Search". The results can be found right under the boxes your entered the language and word.
+
+Hint: If no definitions can be found an error message will appear.
+
+## How It Works
+
+It uses the [freeDictionaryAPI](https://dictionaryapi.dev/) to get the information the word in the corresponding language.
 
 ## Supported Languages
 
