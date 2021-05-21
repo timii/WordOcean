@@ -1,6 +1,6 @@
 import "./DarkModeToggle.css";
 
-const DarkModeToggle = () => {
+function DarkModeToggle() {
   let clickedClass = "clicked";
   const body = document.body;
   const lightTheme = "light";

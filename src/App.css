@@ -1,25 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
   --black: #282C34;
   --white: #ececec;
+  --darkorange: #e76f51;
+  --lightorange: #f4a261;
+  --headerFont: 'Gelasio', serif;
+  /* --headerFont: "Orelega One", cursive; */
+  --textFont: 'Gelasio', serif;
+  --audioIconBlack: url("images/audio_black.png");
+  --audioIconWhite: url("images/audio_white.png");
 }
 
 body {
   background: var(--background-color);
   color: var(--text-color);
-  transition: background 0.3s ease-in-out, color 0.6s ease-in-out;
-  font-family: "Open Sans", sans-serif;
+  transition: all 0.3s ease-in-out;
+  font-family: var(--textFont);
+  box-sizing: border-box;
 }
 
 body.light {
   --background-color: var(--white);
   --text-color: var(--black);
+  --audio-icon: var(--audioIconBlack);
 }
 
 body.dark {
   --background-color: var(--black);
   --text-color: var(--white);
+  --audio-icon: var(--audioIconWhite);
 }
 
 .App {

@@ -1,12 +1,12 @@
 import './App.css';
 import Header from './components/Header';
-import InputFields from './components/InputFields';
+import Content from './components/Content';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <InputFields />
+      <Content />
     </div>
   );
 }

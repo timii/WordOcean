@@ -1,0 +1,45 @@
+.output {
+    font-family: var(--textFont);
+}
+
+.output_header {
+    display: grid;
+    width: 90%;
+    text-align: left;
+    margin-left: 5%;
+    grid-template-columns: 60% 40%;
+    grid-template-areas: 
+    "word phonetics"
+    "lang .";
+}
+
+.output_word {
+    font-size: 100px;
+    font-weight: 600;
+    line-height: 1;
+    /* font-style: italic; */
+    grid-area: word;
+}
+
+.output_lang {
+    font-size: 25px;
+    grid-area: lang;
+}
+
+.output_phonetics {
+    font-size: 20px;
+    grid-area: phonetics;
+    align-self: center;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.output_phonetics > div {
+    margin-right: 1rem;
+}
+
+.output_phonetics-pair {
+    display: flex;
+    align-items: center;
+}
