@@ -53,3 +53,9 @@
     font-weight: 500;
     color: hsl(0, 0%, 20%);
 }
+
+.search_icon {
+    background: url("../images/search.png");
+    height: 25px;
+    width: 25px;
+}
