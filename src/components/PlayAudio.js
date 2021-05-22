@@ -8,7 +8,7 @@ function PlayAudio(props) {
     }
 
     return (
-        <div onClick={onAudioClicked(props.url)} className="audioIcon"></div>
+        <div onClick={() => onAudioClicked(props.url)} className="audioIcon"></div>
     );
 }
 

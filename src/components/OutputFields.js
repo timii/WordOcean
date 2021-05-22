@@ -2,11 +2,6 @@ import "./OutputFields.css";
 import PlayAudio from './PlayAudio';
 
 function OutputFields(props) {
-  // const getLanguage = () => {
-  //     let options = props.options;
-  //     let index = options.findIndex(x => x.value === props.lang)
-  //     return options[index].label;
-  // }
 
   return (
     <div className="output">

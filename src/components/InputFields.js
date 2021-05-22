@@ -46,6 +46,7 @@ function InputFields(props) {
   return (
     <div className="input_container">
       <form className="input" onSubmit={props.handleSubmit}>
+      {/* <form className="input" onSubmit={() => {props.onSearched(true); props.handleSubmit;}}> */}
         <Select
           styles={styles}
           required
@@ -66,7 +67,6 @@ function InputFields(props) {
           onChange={(e) => props.onWordChanged(e.target.value)}
         ></input>
         <div className="search_container">
-          {/* <button onClick={props.handleSubmit} className="input_search">Search</button> */}
           <input type="submit" value="Search" className="input_search" />
           <div className="search_icon"></div>
         </div>
