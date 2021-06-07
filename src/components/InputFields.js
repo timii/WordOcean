@@ -1,5 +1,5 @@
 import "./InputFields.css";
-import Select from "react-select";
+import SelectLanguage from "./SelectLanguage";
 
 function InputFields(props) {
 
@@ -19,50 +19,14 @@ function InputFields(props) {
     { value: "hi", label: "Hindi" },
   ];
 
-  const styles = {
-    control: base => ({
-      ...base,
-      fontSize: "30px",
-      fontFamily: "Gelasio",
-      fontWeight: "500",
-      height: "55px",
-      "&:hover": {
-        borderColor: "#FCB742",
-        color: "red",
-        cursor: "pointer"
-      },
-      "&:active": {
-        borderColor: "#FCB742"
-      }
-    }),
-    menu: base => ({
-      ...base,
-      color: "#282C34",
-      fontFamily: "Gelasio",
-      fontWeight: "500"
-    })
-  };
-
   return (
     <div className="input_container">
       <form className="input" onSubmit={props.handleSubmit}>
-      {/* <form className="input" onSubmit={() => {props.onSearched(true); props.handleSubmit;}}> */}
-        <Select
-          styles={styles}
-          required
-          className="input_lang"
-          options={options}
-          placeholder="Language"
-          onChange={(e) => { 
-            props.onLangChanged(e.value)
-            // For e.g. "en_US" it returns "English"  
-            props.onLangLabelChanged(options[options.findIndex(x => x.value === e.value)].label)
-          }}
-        />
+        <SelectLanguage onLangChanged={props.onLangChanged} onLangLabelChanged={props.onLangLabelChanged} options={options} className="input_lang"/>
         <input
           required
           type="text"
-          placeholder="Word"
+          placeholder="Enter Word"
           className="input_word"
           onChange={(e) => props.onWordChanged(e.target.value)}
         ></input>

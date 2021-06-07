@@ -1,8 +1,8 @@
 .input {
-    height: 30vh;
+    margin-top: 15vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .input > * {
@@ -11,23 +11,20 @@
 
 
 .input_word, .search_container {
-    height: 49px;
-    font-size: 30px;
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+    height: 50px;
+    font-size: 1.2rem;
     font-family: var(--textFont);
     font-weight: 500;
     border-radius: 4px;
     border: 1px solid hsl(0, 0%, 80%);
     outline: 0;
     padding: 2px 8px;
-    color: hsl(0, 0%, 20%);
     max-width: calc(100% - 8px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-
-.input_lang {
-    width: 300px;
 }
 
 .input_word {
@@ -42,20 +39,21 @@
 .search_container {
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: var(--input-bg-color);
 }
 
 .input_search {
-    background-color: white;
-    font-size: 30px;
+    background-color: var(--input-bg-color);
+    font-size: 1.2rem;
     border: none;
     font-family: var(--textFont);
     font-weight: 500;
-    color: hsl(0, 0%, 20%);
+    color: var(--input-text-color);
+    padding-left: 0;
 }
 
 .search_icon {
-    background: url("../images/search.png");
+    background: var(--search-icon);
     height: 25px;
     width: 25px;
 }

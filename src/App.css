@@ -4,8 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
+  --darkBlack: #0d141f;
   --black: #282C34;
+  --darkGrey: #3E4451;
+  --lightGrey: #C5C5C5;
   --white: #ececec;
+  --lightWhite: #ffffff;
   --darkorange: #e76f51;
   --lightorange: #f4a261;
   --headerFont: 'Gelasio', serif;
@@ -13,6 +17,14 @@
   --textFont: 'Gelasio', serif;
   --audioIconBlack: url("images/audio_black.png");
   --audioIconWhite: url("images/audio_white.png");
+  --searchIconBlack: url("images/search_black.png");
+  --searchIconWhite: url("images/search_white.png");
+  --arrowDownBlack: url("images/arrow_down_black.png");
+  --arrowDownWhite: url("images/arrow_down_white.png");
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -25,14 +37,29 @@ body {
 
 body.light {
   --background-color: var(--white);
+  --input-bg-color: var(--black);
   --text-color: var(--black);
+  --input-text-color: var(--white);
+  --hover-color: var(--darkGrey);
   --audio-icon: var(--audioIconBlack);
+  --search-icon: var(--searchIconWhite);
+  --arrow-down-icon: var(--arrowDownWhite);
+  --select-scrollbar: var(--darkBlack);
+  --select-scrollbar-thumb: var(--darkGrey);
 }
 
 body.dark {
   --background-color: var(--black);
+  --input-bg-color: var(--white);
   --text-color: var(--white);
+  --input-text-color: var(--black);
+  --hover-color: var(--lightGrey);
   --audio-icon: var(--audioIconWhite);
+  --search-icon: var(--searchIconBlack);
+  --arrow-down-icon: var(--arrowDownBlack);
+  --select-scrollbar: var(--lightGrey);
+  --select-scrollbar-thumb: var(--lightWhite);
+
 }
 
 .App {
