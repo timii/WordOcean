@@ -6,7 +6,7 @@
 :root {
   --darkBlack: #0d141f;
   --black: #282C34;
-  --darkGrey: #3E4451;
+  --darkGrey: #4e5565;
   --lightGrey: #C5C5C5;
   --white: #ececec;
   --lightWhite: #ffffff;
@@ -57,8 +57,8 @@ body.dark {
   --audio-icon: var(--audioIconWhite);
   --search-icon: var(--searchIconBlack);
   --arrow-down-icon: var(--arrowDownBlack);
-  --select-scrollbar: var(--lightGrey);
-  --select-scrollbar-thumb: var(--lightWhite);
+  --select-scrollbar: var(--lightWhite);
+  --select-scrollbar-thumb: var(--lightGrey);
 
 }
 

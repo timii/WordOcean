@@ -2,7 +2,7 @@ import './PlayAudio.css';
 
 function PlayAudio(props) {
     const onAudioClicked = (url) => {
-        console.log("clicked");
+        console.log("Audio clicked");
         var audio = new Audio(url);
         audio.play();
     }
