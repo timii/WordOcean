@@ -7,7 +7,7 @@
 
 .input > * {
     margin: 0 0.2rem;
-    transition: all 0.3s ease-in-out;
+    transition: var(--standardTransition);
 }
 
 
@@ -34,7 +34,7 @@
 
 .search_container, .input_search {
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: var(--standardTransition);
     /* background-color: var(--darkorange); */
 }
 

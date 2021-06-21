@@ -7,11 +7,13 @@
   --darkBlack: #0d141f;
   --black: #282C34;
   --darkGrey: #4e5565;
+  --grey: #6f7990;
   --lightGrey: #C5C5C5;
   --white: #ececec;
   --lightWhite: #ffffff;
-  --darkorange: #e76f51;
-  --lightorange: #f4a261;
+  --darkerOrange: #d45231;
+  --darkOrange: #e07155;
+  --lightOrange: rgb(221, 122, 97);
   --headerFont: 'Gelasio', serif;
   /* --headerFont: "Orelega One", cursive; */
   --textFont: 'Gelasio', serif;
@@ -21,6 +23,7 @@
   --searchIconWhite: url("images/search_white.png");
   --arrowDownBlack: url("images/arrow_down_black.png");
   --arrowDownWhite: url("images/arrow_down_white.png");
+  --standardTransition: all 0.3s ease-in-out;
 }
 
 * {
@@ -30,7 +33,7 @@
 body {
   background: var(--background-color);
   color: var(--text-color);
-  transition: all 0.3s ease-in-out;
+  transition: var(--standardTransition);
   font-family: var(--textFont);
   box-sizing: border-box;
 }
@@ -40,6 +43,8 @@ body.light {
   --input-bg-color: var(--black);
   --text-color: var(--black);
   --input-text-color: var(--white);
+  --background-accent-color: var(--lightOrange);
+  --text-accent-color: var(--darkerOrange);
   --hover-color: var(--darkGrey);
   --audio-icon: var(--audioIconBlack);
   --search-icon: var(--searchIconWhite);
@@ -53,6 +58,8 @@ body.dark {
   --input-bg-color: var(--white);
   --text-color: var(--white);
   --input-text-color: var(--black);
+  --background-accent-color: var(--darkerOrange);
+  --text-accent-color: var(--lightOrange);
   --hover-color: var(--lightGrey);
   --audio-icon: var(--audioIconWhite);
   --search-icon: var(--searchIconBlack);
@@ -63,6 +70,5 @@ body.dark {
 }
 
 .App {
-  text-align: center;
   padding: 0 5vw;
 }
