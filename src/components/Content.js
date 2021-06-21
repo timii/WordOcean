@@ -10,6 +10,7 @@ function Content() {
   const [data, setData] = useState([]);
   const [isResponseOK, setIsResponseOK] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const callAPI = () => {
     console.log("hasSearched0: " + hasSearched);
@@ -19,6 +20,7 @@ function Content() {
   };
 
   const handleSubmit = (e) => {
+    setIsLoading(true);
     setHasSearched(true);
 
     callAPI()
@@ -35,6 +37,7 @@ function Content() {
 
     // Prevent the site from refreshing when submitting
     e.preventDefault();
+    setIsLoading(false);
   };
 
   return (
@@ -43,6 +46,9 @@ function Content() {
       {isResponseOK ? 
         <OutputFields data={data} word={word} lang={lang} langLabel={langLabel}/>
        : 
+       isLoading ? 
+       <h1>Loading</h1>
+       :
         hasSearched ? 
             <NothingFound data={data} word={word} langLabel={langLabel} />
            : 

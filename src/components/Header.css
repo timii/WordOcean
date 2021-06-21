@@ -9,6 +9,7 @@
     width: 100%;
     font-family: var(--headerFont);
     line-height: 1;
+    text-align: center;
 }
 
 /* .header_subtext {
