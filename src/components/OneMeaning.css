@@ -1,0 +1,44 @@
+.meaning {
+  display: grid;
+  grid-template-columns: 0.4fr 1.5fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "partOfSpeech definitions";
+  min-height: 200px;
+}
+
+.meaning > div {
+    padding-top: 2rem;
+}
+
+.part_of_speech {
+  grid-area: partOfSpeech;
+  border-right: 1px solid var(--input-bg-color);
+  text-align: right;
+  padding-right: 50px;
+  font-weight: 500;
+  padding: 2rem 50px 25px;
+}
+
+.part_of_speech_text {
+  border-bottom: 1px solid var(--text-accent-color);
+}
+
+.definitions {
+  grid-area: definitions;
+  font-weight: 500;
+  line-height: 1;
+  padding: 2rem 100px 1.5rem 50px;
+  border-bottom: 1px solid var(--input-bg-color);
+}
+
+.definition {
+    font-size: 30px;
+}
+
+.example {
+    margin-top: 1rem;
+    color: var(--grey);
+    font-style: italic;
+}

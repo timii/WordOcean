@@ -1,0 +1,30 @@
+.synonyms_container {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.synonyms_list {
+    list-style: none;
+    margin: 0;
+    padding-left: 3rem;
+}
+
+.synonyms_item {
+    display: inline;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    /* Makes the list elements wrap into the next row */
+    float: left;
+    color: var(--text-accent-color);
+    transition: var(--standardTransition);
+}
+
+.synonyms_item::after {
+    content: ", ";
+    color: var(--text-color);
+    transition: var(--standardTransition);
+}
+
+.synonyms_item:last-child::after {
+    content: "";
+}

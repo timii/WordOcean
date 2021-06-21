@@ -4,13 +4,12 @@
 
 .output_header {
     display: grid;
-    width: 90%;
-    text-align: left;
-    margin-left: 5%;
+    padding: 0 5% 5% 5%;
     grid-template-columns: 60% 40%;
     grid-template-areas: 
     "word phonetics"
     "lang .";
+    border-bottom: 1px solid var(--input-bg-color);
 }
 
 .output_word {
@@ -19,11 +18,21 @@
     line-height: 1;
     /* font-style: italic; */
     grid-area: word;
+    align-self: center;
 }
+
 
 .output_lang {
     font-size: 25px;
     grid-area: lang;
+}
+
+.output_lang_text {
+    background-color: var(--background-accent-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: var(--standardTransition);
 }
 
 .output_phonetics {
@@ -42,4 +51,7 @@
 .output_phonetics-pair {
     display: flex;
     align-items: center;
+    border: 1px solid var(--background-accent-color);
+    padding: 0.35rem 1.2rem 0.35rem 1.5rem;
+    border-radius: 20px;
 }
