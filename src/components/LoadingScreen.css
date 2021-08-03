@@ -1,0 +1,8 @@
+.gifContainer {
+    margin: 0 auto;
+    background-image: var(--loading-gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120px;
+    width: 120px;
+}

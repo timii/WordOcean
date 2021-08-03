@@ -1,6 +1,7 @@
 import InputFields from "./InputFields";
 import OutputFields from "./OutputFields";
 import NothingFound from "./NothingFound";
+import LoadingScreen from "./LoadingScreen";
 import { useState } from "react";
 
 function Content() {
@@ -21,7 +22,6 @@ function Content() {
 
   const handleSubmit = (e) => {
     setIsLoading(true);
-    setHasSearched(true);
 
     callAPI()
       .then((response) => {
@@ -30,24 +30,34 @@ function Content() {
         }
         return response.json();
       })
-      .then((data) => {setData(data); console.log("data: " + data)})
+      .then((data) => {setData(data)})
       .catch((error) => console.log(error));
     
     console.log("lang: " + lang + ", word: " + word);
 
     // Prevent the site from refreshing when submitting
     e.preventDefault();
-    setIsLoading(false);
+    console.log("Loading = false")
+    // setIsLoading(false);
+    // console.log("Searched = true")
+    // setHasSearched(true);
   };
 
   return (
     <div className="content">
       <InputFields handleSubmit={handleSubmit} onLangChanged={setLang} onWordChanged={setWord} onLangLabelChanged={setLangLabel} />
+      {/* {isResponseOK && !isLoading && <OutputFields data={data} word={word} lang={lang} langLabel={langLabel}/>}
+      {isLoading && <LoadingScreen/>}
+      {hasSearched ? <NothingFound data={data} word={word} langLabel={langLabel} /> : <h1>Not Searched</h1>} */}
+
       {isResponseOK ? 
         <OutputFields data={data} word={word} lang={lang} langLabel={langLabel}/>
        : 
        isLoading ? 
-       <h1>Loading</h1>
+       <LoadingScreen/>
+      //  <img src={loadingFishGif} alt="1"></img> 
+      //  :
+      //  <LoadingScreen/>
        :
         hasSearched ? 
             <NothingFound data={data} word={word} langLabel={langLabel} />
