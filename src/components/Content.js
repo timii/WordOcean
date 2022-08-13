@@ -30,9 +30,9 @@ function Content() {
         }
         return response.json();
       })
-      .then((data) => {setData(data)})
+      .then((data) => { setData(data) })
       .catch((error) => console.log(error));
-    
+
     console.log("lang: " + lang + ", word: " + word);
 
     // Prevent the site from refreshing when submitting
@@ -50,25 +50,21 @@ function Content() {
       {isLoading && <LoadingScreen/>}
       {hasSearched ? <NothingFound data={data} word={word} langLabel={langLabel} /> : <h1>Not Searched</h1>} */}
 
-      {isResponseOK ? 
-        <OutputFields data={data} word={word} lang={lang} langLabel={langLabel}/>
-       : 
-       isLoading ? 
-       <LoadingScreen/>
-      //  <img src={loadingFishGif} alt="1"></img> 
-      //  :
-      //  <LoadingScreen/>
-       :
-        hasSearched ? 
+      {isResponseOK ?
+        <OutputFields data={data} word={word} lang={lang} langLabel={langLabel} />
+        :
+        isLoading ?
+          <LoadingScreen />
+          //  <img src={loadingFishGif} alt="1"></img> 
+          //  :
+          //  <LoadingScreen/>
+          :
+          hasSearched ?
             <NothingFound data={data} word={word} langLabel={langLabel} />
-           : 
+            :
             <h1>Not Searched</h1>
-          
+
       }
-      <hr />
-      <p>
-        Language: {lang}, Word: {word}
-      </p>
     </div>
   );
 }

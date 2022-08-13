@@ -1,15 +1,15 @@
-.synonyms_container {
+.word_list_container {
     display: flex;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
 }
 
-.synonyms_list {
+.word_list_words {
     list-style: none;
     margin: 0;
-    padding-left: 3rem;
+    padding-left: 1.5rem;
 }
 
-.synonyms_item {
+.word_list_item {
     display: inline;
     padding-right: 5px;
     padding-bottom: 10px;
@@ -19,12 +19,12 @@
     transition: var(--standardTransition);
 }
 
-.synonyms_item::after {
+.word_list_item::after {
     content: ", ";
     color: var(--text-color);
     transition: var(--standardTransition);
 }
 
-.synonyms_item:last-child::after {
+.word_list_item:last-child::after {
     content: "";
 }

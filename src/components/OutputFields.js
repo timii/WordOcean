@@ -23,63 +23,11 @@ function OutputFields(props) {
           </div>
           <div className="output_content">
             <div className="output_meanings">
-              {word.meanings.map((wordMeaning, i) => (
-                <OneMeaning key={i} meaning={wordMeaning} />
-              ))}
-              {/* {word.meanings.map((d, i) => (
-                <div key={i}>
-                  PARTOFSPEECH: {d.partOfSpeech}
-                  {d.definitions.map((e, j) => (
-                    <div key={j}>
-                      DEFINITION: {e.definition}; EXAMPLE: {e.example}
-                      <div>
-                        {e.synonyms && (
-                          <div>
-                            {e.synonyms.map((f, k) => (
-                              <p key={k}> SYNONYM: {f}</p>
-                            ))}
-                          </div>
-                        )}
-                        <hr />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ))} */}
+              {word.meanings.map((wordMeaning, i) => i === word.meanings.length - 1
+                ? <OneMeaning key={i} meaning={wordMeaning} lastOne="true" />
+                : <OneMeaning key={i} meaning={wordMeaning} />
+              )}
             </div>
-          </div>
-          {/* <h2>Phonetics</h2>
-          <div>
-            {word.phonetics.map((c, h) => (
-              <p key={h}>
-                TEXT: {c.text}; AUDIO: {c.audio}
-              </p>
-            ))}
-          </div>
-          <hr /> */}
-          <div>
-            <h2>Meanings</h2>
-            {word.meanings.map((d, i) => (
-              <div key={i}>
-                PARTOFSPEECH: {d.partOfSpeech}
-                {d.definitions.map((e, j) => (
-                  <div key={j}>
-                    DEFINITION: {e.definition}; EXAMPLE: {e.example}
-                    <div>
-                      {/* Checks if the meaning has any synonyms, if yes print them */}
-                      {e.synonyms && (
-                        <div>
-                          {e.synonyms.map((f, k) => (
-                            <p key={k}> SYNONYM: {f}</p>
-                          ))}
-                        </div>
-                      )}
-                      <hr />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ))}
           </div>
         </div>
       ))}
