@@ -19,7 +19,7 @@
     font-family: var(--textFont);
     font-weight: 500;
     border-radius: 4px;
-    border: 1px solid hsl(0, 0%, 80%);
+    border: var(--input-border);
     outline: 0;
     padding: 2px 8px;
     max-width: calc(100% - 8px);
@@ -59,4 +59,13 @@
     height: 25px;
     width: 25px;
     transition: all 0.3s ease-in-out;
+}
+
+::placeholder {
+    color: var(--placeholder-color);
+    opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder {
+    color: var(--placeholder-color);
 }

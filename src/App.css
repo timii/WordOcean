@@ -14,6 +14,8 @@
   --darkerOrange: #d45231;
   --darkOrange: #e07155;
   --lightOrange: rgb(221, 122, 97);
+  --placerholderColorLight: #a3a3a3;
+  --placerholderColorDark: grey;
   --headerFont: 'Gelasio', serif;
   /* --headerFont: "Orelega One", cursive; */
   --textFont: 'Gelasio', serif;
@@ -26,6 +28,7 @@
   --fishLoaderBlack: url("images/loader_fish_black.svg");
   --fishLoaderWhite: url("images/loader_fish_white.svg");
   --standardTransition: all 0.3s ease-in-out;
+  --inputBorder: 1px solid hsl(0, 0%, 80%);
 }
 
 * {
@@ -42,34 +45,40 @@ body {
 
 body.light {
   --background-color: var(--white);
-  --input-bg-color: var(--black);
+  --input-bg-color: var(--white);
   --text-color: var(--black);
-  --input-text-color: var(--white);
+  --input-text-color: var(--black);
+  --input-border: var(--inputBorder);
   --background-accent-color: var(--lightOrange);
   --text-accent-color: var(--darkerOrange);
-  --hover-color: var(--darkGrey);
-  --audio-icon: var(--audioIconBlack);
-  --search-icon: var(--searchIconWhite);
-  --arrow-down-icon: var(--arrowDownWhite);
-  --select-scrollbar: var(--darkBlack);
-  --select-scrollbar-thumb: var(--darkGrey);
-  --loading-gif: var(--fishLoaderBlack);
-}
-
-body.dark {
-  --background-color: var(--black);
-  --input-bg-color: var(--white);
-  --text-color: var(--white);
-  --input-text-color: var(--black);
-  --background-accent-color: var(--darkerOrange);
-  --text-accent-color: var(--lightOrange);
   --hover-color: var(--lightGrey);
-  --audio-icon: var(--audioIconWhite);
+  --audio-icon: var(--audioIconBlack);
   --search-icon: var(--searchIconBlack);
   --arrow-down-icon: var(--arrowDownBlack);
   --select-scrollbar: var(--lightWhite);
   --select-scrollbar-thumb: var(--lightGrey);
+  --loading-gif: var(--fishLoaderBlack);
+  --output-border: var(--black);
+  --placeholder-color: var(--placerholderColorLight);
+}
+
+body.dark {
+  --background-color: var(--black);
+  --input-bg-color: var(--black);
+  --text-color: var(--white);
+  --input-text-color: var(--white);
+  --input-border: var(--inputBorder);
+  --background-accent-color: var(--darkerOrange);
+  --text-accent-color: var(--lightOrange);
+  --hover-color: var(--darkGrey);
+  --audio-icon: var(--audioIconWhite);
+  --search-icon: var(--searchIconWhite);
+  --arrow-down-icon: var(--arrowDownWhite);
+  --select-scrollbar: var(--darkBlack);
+  --select-scrollbar-thumb: var(--darkGrey);
   --loading-gif: var(--fishLoaderWhite);
+  --output-border: var(--white);
+  --placeholder-color: var(--placerholderColorDark);
 }
 
 .App {

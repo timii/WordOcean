@@ -9,7 +9,7 @@
     grid-template-areas: 
     "word phonetics"
     "lang .";
-    border-bottom: 1px solid var(--input-bg-color);
+    border-bottom: 1px solid var(--output-border);
 }
 
 .output_word {
