@@ -6,16 +6,19 @@ function OutputFields(props) {
   return (
     <div className="output">
       {props.data.map((word) => (
-        <div key="word">
+        <div className="output_element" key="word">
           <div className="output_header">
             <div className="output_word">{word.word}</div>
             <div className="output_lang"><span className="output_lang_text">{props.langLabel}</span></div>
             <div className="output_phonetics">
-              {word.phonetics.map((phonetic, h) => (
-                <div className="output_phonetics-pair" key={h}>
-                  [{phonetic.text}] <PlayAudio url={phonetic.audio} />
-                </div>
-              ))}
+              {word.phonetics.map((phonetic, h) => {
+                return phonetic.text ? (
+                  <div className="output_phonetics-pair" key={h}>
+                    [{phonetic.text}]
+                    {(phonetic.audio.length > 0 && phonetic.sourceUrl) && <PlayAudio url={phonetic.audio} />}
+                  </div>
+                ) : null
+              })}
             </div>
           </div>
           <div className="output_content">

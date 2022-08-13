@@ -51,6 +51,7 @@
   max-height: 240px;
   opacity: 1;
   overflow-y: scroll;
+  z-index: 1;
 }
 
 .select-box .options-container.active + .selected::after {
