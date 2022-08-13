@@ -15,9 +15,15 @@
 
 ## How To Use
 
-Choose a language from the [supported languages](#supported-languages) and the word you want to know the definition of and press "Search". The results can be found right under the boxes you entered the language and word in.
+Go to the [site](Link hinzufügen bitte), choose one of the languages from [supported languages](#supported-languages), enter the word you want to know the definition of and press "Search". The results will be shown below.
 
-Hint: If no definitions can be found an error message will appear instead.
+## Run locally
+
+- clone/download this repo,
+- run `npm install` inside the downloaded folder to install all the dependencies,
+- after all the dependencies are installed run `npm start`
+
+After a short time the site opens automatically in your browser.
 
 ## How It Works
 
