@@ -1,4 +1,5 @@
 import "./InputFields.css";
+import InputHint from "./InputHint";
 import SelectLanguage from "./SelectLanguage";
 
 function InputFields(props) {
@@ -22,17 +23,22 @@ function InputFields(props) {
   return (
     <div className="input_container">
       <form className="input" onSubmit={props.handleSubmit}>
-        <SelectLanguage onLangChanged={props.onLangChanged} onLangLabelChanged={props.onLangLabelChanged} options={options} className="input_lang"/>
-        <input
-          required
-          type="text"
-          placeholder="Enter Word"
-          className="input_word"
-          onChange={(e) => props.onWordChanged(e.target.value)}
-        ></input>
-        <div className="search_container">
-          <input type="submit" value="Search" className="input_search" />
-          <div className="search_icon"></div>
+        <SelectLanguage onLangChanged={props.onLangChanged} onLangLabelChanged={props.onLangLabelChanged} options={options} className="input_lang" showHint={props.showInputHint.langHint} />
+        <div className="word_input_container">
+          <InputHint text={props.showInputHint.wordHint ? "Please enter a word" : ""}></InputHint>
+          <input
+            type="text"
+            placeholder="Enter Word"
+            className="input_word"
+            onChange={(e) => props.onWordChanged(e.target.value)}
+          ></input>
+        </div>
+        <div>
+          <InputHint text=""></InputHint>
+          <div className="search_container">
+            <input type="submit" value="Search" className="input_search" />
+            <div className="search_icon"></div>
+          </div>
         </div>
       </form>
     </div>

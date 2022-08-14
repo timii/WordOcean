@@ -5,11 +5,10 @@
     justify-content: center;
 }
 
-.input > * {
-    margin: 0 0.2rem;
-    transition: var(--standardTransition);
+.word_input_container {
+    display: flex; 
+    flex-direction: column;
 }
-
 
 .input_word, .search_container {
     background-color: var(--input-bg-color);
@@ -30,6 +29,7 @@
 
 .input_word {
     width: 300px;
+    transition: var(--standardTransition);
 }
 
 .search_container, .input_search {
@@ -42,6 +42,15 @@
     display: flex;
     align-items: center;
     background-color: var(--input-bg-color);
+    width: 115px;
+}
+
+.search_container:hover {
+    background-color: var(--hover-color);
+}
+
+.search_container:hover .input_search {
+    background-color: var(--hover-color);
 }
 
 .input_search {

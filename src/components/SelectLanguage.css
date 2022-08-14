@@ -1,3 +1,8 @@
+.container {
+  margin-right: 0.5rem;
+
+}
+
 .select-box, .options-container, .selected {
   transition: var(--standardTransition);
 }

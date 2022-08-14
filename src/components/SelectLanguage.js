@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import InputHint from "./InputHint";
 import "./SelectLanguage.css";
 
 function SelectLanguage(props) {
@@ -53,21 +54,25 @@ function SelectLanguage(props) {
   };
 
   return (
-    <div className="container">
-      <div className="select-box">
-        <div className="options-container">
-          {props.options.map((option, i) => (
-            <div className="option" key={i}>
-              <input type="radio" className="radio" id={option.value} />
-              <label htmlFor={option.value}>{option.label}</label>
-            </div>
-          ))}
-        </div>
+    <div>
+      <InputHint text={props.showHint ? "Please select a language" : ""}></InputHint>
 
-        <div onChange={(e) => console.log(e)} className="selected">
-          {selectedLangLabel}
+      <div className="container" >
+        <div className="select-box">
+          <div className="options-container">
+            {props.options.map((option, i) => (
+              <div className="option" key={i}>
+                <input type="radio" className="radio" id={option.value} />
+                <label htmlFor={option.value}>{option.label}</label>
+              </div>
+            ))}
+          </div>
+
+          <div onChange={(e) => console.log(e)} className="selected">
+            {selectedLangLabel}
+          </div>
         </div>
-      </div>
+      </div >
     </div>
   );
 }

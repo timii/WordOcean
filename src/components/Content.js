@@ -2,7 +2,7 @@ import InputFields from "./InputFields";
 import OutputFields from "./OutputFields";
 import NothingFound from "./NothingFound";
 import LoadingScreen from "./LoadingScreen";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Content() {
   const [lang, setLang] = useState("");
@@ -11,60 +11,69 @@ function Content() {
   const [data, setData] = useState([]);
   const [isResponseOK, setIsResponseOK] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
+  const [clickedSearch, setClickedSearch] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [validInputs, setValidInputs] = useState({ validLang: false, validWord: false });
+  const [showInputHint, setShowInputHint] = useState({ langHint: false, wordHint: false });
 
-  const callAPI = () => {
-    console.log("hasSearched0: " + hasSearched);
-    return fetch(
-      `https://api.dictionaryapi.dev/api/v2/entries/${lang}/${word}`
-    );
-  };
+  useEffect(() => {
+    console.log("in useEffect -> validInputs:", validInputs.validLang && validInputs.validWord)
 
-  const handleSubmit = (e) => {
-    setIsLoading(true);
+    if (hasSearched) {
+      setShowInputHint({ langHint: !validInputs.validLang, wordHint: !validInputs.validWord })
+    }
 
-    callAPI()
-      .then((response) => {
+    if (validInputs.validLang && validInputs.validWord && clickedSearch) {
+      setIsLoading(true);
+
+      fetch(
+        `https://api.dictionaryapi.dev/api/v2/entries/${lang}/${word}`
+      ).then((response) => {
         if (response.ok) {
           setIsResponseOK(true);
         }
         return response.json();
       })
-      .then((data) => { setData(data) })
-      .catch((error) => console.log(error));
+        .then((data) => { setData(data) })
+        .catch((error) => console.log(error));
 
-    console.log("lang: " + lang + ", word: " + word);
+      console.log("lang: " + lang + ", word: " + word);
+
+      console.log("Loading = false")
+      setClickedSearch(false)
+      // setIsLoading(false);
+      // console.log("Searched = true")
+    }
+  }, [clickedSearch, hasSearched, lang, validInputs, word])
+
+  const handleSubmit = (e) => {
+    console.log("handleSubmit")
+    setValidInputs({ validLang: lang.length > 0 && langLabel.length > 0, validWord: word.length > 0 })
+
+    setHasSearched(true);
+    setClickedSearch(true)
 
     // Prevent the site from refreshing when submitting
     e.preventDefault();
-    console.log("Loading = false")
-    // setIsLoading(false);
-    // console.log("Searched = true")
-    // setHasSearched(true);
   };
+
+  // Set output element depending on the current state
+  let output
+  if (isResponseOK) {
+    output = <OutputFields data={data} word={word} lang={lang} langLabel={langLabel} />
+  }
+  else if (isLoading) {
+    output = <LoadingScreen />
+  }
+  else if (hasSearched && validInputs.validLang && validInputs.validWord) {
+    output = <NothingFound data={data} word={word} langLabel={langLabel} />
+  }
 
   return (
     <div className="content">
-      <InputFields handleSubmit={handleSubmit} onLangChanged={setLang} onWordChanged={setWord} onLangLabelChanged={setLangLabel} />
-      {/* {isResponseOK && !isLoading && <OutputFields data={data} word={word} lang={lang} langLabel={langLabel}/>}
-      {isLoading && <LoadingScreen/>}
-      {hasSearched ? <NothingFound data={data} word={word} langLabel={langLabel} /> : <h1>Not Searched</h1>} */}
+      <InputFields handleSubmit={handleSubmit} onLangChanged={setLang} onWordChanged={setWord} onLangLabelChanged={setLangLabel} showInputHint={showInputHint} />
 
-      {isResponseOK ?
-        <OutputFields data={data} word={word} lang={lang} langLabel={langLabel} />
-        :
-        isLoading ?
-          <LoadingScreen />
-          //  <img src={loadingFishGif} alt="1"></img> 
-          //  :
-          //  <LoadingScreen/>
-          :
-          hasSearched ?
-            <NothingFound data={data} word={word} langLabel={langLabel} />
-            :
-            <h1>Not Searched</h1>
-
-      }
+      {output}
     </div>
   );
 }
