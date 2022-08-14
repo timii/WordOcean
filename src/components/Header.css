@@ -3,6 +3,22 @@
     position: relative;
 }
 
+.header_github {
+    background: transparent var(--github-logo) no-repeat center;
+    background-size: 30px 30px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    transition: var(--standardTransition);
+    position: absolute;
+    top: 5vh;
+    left: 3vw;
+}
+
+.header_github:hover {
+    cursor: pointer;
+}
+
 .header_text {
     font-size: 5em;
     font-weight: 700;
@@ -11,14 +27,6 @@
     line-height: 1;
     text-align: center;
 }
-
-/* .header_subtext {
-    font-size: 1.5em;
-    margin: 0;
-    font-family: var(--headerFont);
-    font-weight: 400;
-    letter-spacing: 0.8px;
-} */
 
 #darkModeToggle {
     position: absolute;

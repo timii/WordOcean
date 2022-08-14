@@ -27,6 +27,8 @@
   --arrowDownWhite: url("images/arrow_down_white.png");
   --fishLoaderBlack: url("images/loader_fish_black.svg");
   --fishLoaderWhite: url("images/loader_fish_white.svg");
+  --githubBlack: url("images/github_dark.png");
+  --githubWhite: url("images/github_light.png");
   --standardTransition: all 0.3s ease-in-out;
   --inputBorder: 1px solid hsl(0, 0%, 80%);
   --outputBorderGradientLight: linear-gradient(90deg, rgba(40,44,52,0) 0%, rgba(40,44,52,0) 30%, rgba(40,44,52,1) 100%);
@@ -63,6 +65,7 @@ body.light {
   --output-border: var(--black);
   --output-gradient-border: var(--outputBorderGradientLight);
   --placeholder-color: var(--placerholderColorLight);
+  --github-logo: var(--githubBlack);
 }
 
 body.dark {
@@ -83,6 +86,7 @@ body.dark {
   --output-border: var(--white);
   --output-gradient-border: var(--outputBorderGradientDark);
   --placeholder-color: var(--placerholderColorDark);
+  --github-logo: var(--githubWhite);
 }
 
 .App {
