@@ -8,6 +8,7 @@ function Content() {
   const [lang, setLang] = useState("");
   const [langLabel, setLangLabel] = useState("");
   const [word, setWord] = useState("");
+  const [notFoundWord, setNotFoundWord] = useState("");
   const [data, setData] = useState([]);
   const [isResponseOK, setIsResponseOK] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
@@ -32,19 +33,21 @@ function Content() {
         if (response.ok) {
           setIsResponseOK(true);
         }
+        else {
+          setIsResponseOK(false)
+        }
         return response.json();
       })
-        .then((data) => { setData(data) })
-        .catch((error) => console.log(error));
+        .then((data) => {
+          setData(data);
+          setIsLoading(false)
+          setNotFoundWord(word)
+        })
+        .catch((error) => console.log("error is:", error));
 
-      console.log("lang: " + lang + ", word: " + word);
-
-      console.log("Loading = false")
       setClickedSearch(false)
-      // setIsLoading(false);
-      // console.log("Searched = true")
     }
-  }, [clickedSearch, hasSearched, lang, validInputs, word])
+  }, [clickedSearch, hasSearched, isResponseOK, lang, validInputs, word])
 
   const handleSubmit = (e) => {
     console.log("handleSubmit")
@@ -60,13 +63,13 @@ function Content() {
   // Set output element depending on the current state
   let output
   if (isResponseOK) {
-    output = <OutputFields data={data} word={word} lang={lang} langLabel={langLabel} />
+    output = <OutputFields data={data} word={word} lang={lang} langLabel={langLabel} notFoundWord={notFoundWord} />
   }
   else if (isLoading) {
     output = <LoadingScreen />
   }
   else if (hasSearched && validInputs.validLang && validInputs.validWord) {
-    output = <NothingFound data={data} word={word} langLabel={langLabel} />
+    output = <NothingFound word={notFoundWord} langLabel={langLabel} />
   }
 
   return (
