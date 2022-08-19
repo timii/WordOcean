@@ -51,3 +51,25 @@
 .word_lists {
   margin-top: 2rem;
 }
+
+@media only screen and (max-width: 900px){
+  .part_of_speech {
+    padding-right: 10px;
+    padding-top: 25px;
+    min-width: 20%;
+    word-wrap: break-word;
+  }
+
+  .definition {
+    line-height: 1.2;
+    padding: 25px 20px 25px 30px;
+  }
+
+  .definition_text {
+    font-size: 25px;
+  }
+
+  .word_lists {
+    margin-top: 20px;
+  }
+}

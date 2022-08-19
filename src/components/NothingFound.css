@@ -1,3 +1,51 @@
 .nothing-found {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2em;
+    width: 100%;
+
 }
+
+.title {
+    font-size: 2em;
+    margin: 0.5em 0 0.25em;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title_word, .title_lang {
+    font-style: italic;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    margin: 0.3em 0 2em;
+}
+
+.puddle {
+    transition: var(--standardTransition);
+    background: var(--puddle-icon);
+    height: 60px;
+    width: 60px;
+}
+
+@media only screen and (max-width: 900px){
+    .title {
+        font-size: 1.5em;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+        margin: 0.2em 0 1em;
+        line-height: 1.5em;
+    }
+
+    .puddle {
+        height: 45px;
+        width: 45px;
+        background-size: contain;
+    }
+  }

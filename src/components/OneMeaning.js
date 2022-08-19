@@ -12,19 +12,7 @@ function OneMeaning(props) {
       <div className="definitions">
         {meaning.definitions.map((definitions, j) => (
           <div key={j} className="definition">
-            {definitions.length > 1 ?
-              <div>
-                {/* {definitions.map((definition, k) => (
-                <div key={k}>{{ definition }}</div>
-                // <ul key={k}>
-                // <li>{{definition}}</li>
-                // </ul>
-              )
-              )} */}
-              </div>
-              :
-              <div className="definition_text">{definitions.definition}</div>
-            }
+            <div className="definition_text">{definitions.definition}</div>
             {definitions.example &&
               <div className="definition_example">"{definitions.example}"</div>
             }

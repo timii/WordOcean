@@ -69,7 +69,7 @@ function Content() {
     output = <LoadingScreen />
   }
   else if (hasSearched && validInputs.validLang && validInputs.validWord) {
-    output = <NothingFound word={notFoundWord} langLabel={langLabel} />
+    output = <NothingFound clickedSearch={clickedSearch} word={notFoundWord} langLabel={langLabel} />
   }
 
   return (

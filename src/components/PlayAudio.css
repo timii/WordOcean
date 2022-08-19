@@ -5,8 +5,26 @@
     color: white;
     background: var(--audio-icon);
     transition: var(--standardTransition);
+    flex-shrink: 0;
 }
 
 .audioIcon:hover {
     cursor: pointer;
+}
+
+@media only screen and (max-width: 1100px){
+    .audioIcon {
+        height: 22px;
+        width: 22px;
+        margin-bottom: 1px;
+    }
+}
+
+@media only screen and (max-width: 9000px){
+    .audioIcon {
+        /* height: 20px; */
+        /* width: 20px; */
+        margin-bottom: 2px;
+        margin-left: 0.25rem;
+    }
 }

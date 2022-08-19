@@ -22,14 +22,20 @@
 .header_text {
     font-size: 5em;
     font-weight: 700;
-    width: 100%;
     font-family: var(--headerFont);
     line-height: 1;
     text-align: center;
+    margin: 0 15%;
 }
 
 #darkModeToggle {
     position: absolute;
     top: 5vh;
     right: 3vw;
+}
+
+@media only screen and (max-width: 900px) {
+    .header_text {
+        font-size: 4em;
+    }
 }

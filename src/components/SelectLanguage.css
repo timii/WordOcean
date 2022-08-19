@@ -11,13 +11,13 @@
   display: flex;
   width: 300px;
   flex-direction: column;
+  position: relative;
 }
 
 .select-box .options-container {
   background: var(--input-bg-color);
   color: var(--input-text-color);
   max-height: 0;
-  width: 100%;
   opacity: 0;
   border-radius: 8px;
   overflow: hidden;
@@ -32,8 +32,8 @@
   color: var(--input-text-color);
   position: relative;
   border: var(--input-border);
-
   order: 0;
+  height: 50px;
 }
 
 .nothing-selected {
@@ -53,8 +53,15 @@
   transition: var(--standardTransition);
 }
 
+.options-container {
+  position: absolute;
+  left: -1px;
+  top: 59px;
+  width: 302px;
+}
+
 .options-container.active {
-  border: var(--input-border)
+  border: var(--input-border);
 }
 
 .select-box .options-container.active {

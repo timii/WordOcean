@@ -1,6 +1,5 @@
 .word_list_container {
     display: flex;
-    /* margin-top: 2rem; */
 }
 
 .word_list_words {
@@ -12,7 +11,7 @@
 .word_list_item {
     display: inline;
     padding-right: 5px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     /* Makes the list elements wrap into the next row */
     float: left;
     color: var(--text-accent-color);

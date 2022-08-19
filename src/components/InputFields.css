@@ -35,7 +35,6 @@
 .search_container, .input_search {
     cursor: pointer;
     transition: var(--standardTransition);
-    /* background-color: var(--darkorange); */
 }
 
 .search_container {
@@ -78,3 +77,25 @@
 ::-ms-input-placeholder {
     color: var(--placeholder-color);
 }
+
+@media only screen and (max-width: 900px){
+    .input {
+        margin-top: 5vh;
+        margin-bottom: 7vh;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input_word {
+        width: 310px;
+    }
+
+    .search_container {
+        width: 310px;
+        justify-content: center;
+        margin-top: 8px;
+    }
+  }
+  

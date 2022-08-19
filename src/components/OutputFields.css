@@ -4,8 +4,9 @@
 
 .output_header {
     display: grid;
-    padding: 0 5% 5% 5%;
+    padding: 0 40px 40px 40px;
     grid-template-columns: 60% 40%;
+    gap: 10px;
     grid-template-areas: 
     "word phonetics"
     "lang .";
@@ -13,12 +14,15 @@
 }
 
 .output_word {
-    font-size: 100px;
+    font-size: 80px;
     font-weight: 600;
-    line-height: 1;
-    /* font-style: italic; */
+    line-height: 1.2;
     grid-area: word;
     align-self: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -42,6 +46,7 @@
     display: flex;
     width: 100%;
     justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 .output_phonetics > div {
@@ -54,4 +59,46 @@
     border: 1px solid var(--background-accent-color);
     padding: 0.35rem 1.2rem 0.35rem 1.5rem;
     border-radius: 20px;
+    margin-bottom: 6px;
+}
+
+.output_meanings {
+    margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 1100px){
+    .output_phonetics > div {
+        margin-right: 0.5rem;
+    }
+
+    .output_phonetics {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .output_header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-bottom: 1px solid var(--output-border);
+    }
+
+    .output_word {
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 1;
+        grid-area: word;
+        align-self:flex-start;
+    }
+
+    .output_lang {
+        font-size: 18px;
+        grid-area: lang;
+    }
+
+    .output_phonetics {
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
 }

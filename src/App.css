@@ -29,6 +29,8 @@
   --fishLoaderWhite: url("images/loader_fish_white.svg");
   --githubBlack: url("images/github_dark.png");
   --githubWhite: url("images/github_light.png");
+  --puddleWhite: url("images/puddle_light.png");
+  --puddleBlack: url("images/puddle_dark.png");
   --standardTransition: all 0.3s ease-in-out;
   --inputBorder: 1px solid hsl(0, 0%, 80%);
   --outputBorderGradientLight: linear-gradient(90deg, rgba(40,44,52,0) 0%, rgba(40,44,52,0) 30%, rgba(40,44,52,1) 100%);
@@ -66,6 +68,7 @@ body.light {
   --output-gradient-border: var(--outputBorderGradientLight);
   --placeholder-color: var(--placerholderColorLight);
   --github-logo: var(--githubBlack);
+  --puddle-icon: var(--puddleBlack);
 }
 
 body.dark {
@@ -87,8 +90,15 @@ body.dark {
   --output-gradient-border: var(--outputBorderGradientDark);
   --placeholder-color: var(--placerholderColorDark);
   --github-logo: var(--githubWhite);
+  --puddle-icon: var(--puddleWhite);
 }
 
 .App {
   padding: 0 5vw;
+}
+
+@media only screen and (max-width: 900px){
+  .App {
+    padding: 0;
+  }
 }
