@@ -1,10 +1,11 @@
 .container {
   margin-right: 0.5rem;
-
 }
 
 .select-box, .options-container, .selected {
-  transition: var(--standardTransition);
+  transition-property: background-color, color, background;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .select-box {
@@ -80,13 +81,13 @@
   width: 8px;
   background-color: var(--select-scrollbar);
   border-radius: 0 8px 8px 0;
-  transition: var(--standardTransition);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .select-box .options-container::-webkit-scrollbar-thumb {
   background-color: var(--select-scrollbar-thumb);
   border-radius: 0 8px 8px 0;
-  transition: var(--standardTransition);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .select-box .option,
@@ -106,4 +107,14 @@
 
 .select-box .option .radio {
   display: none;
+}
+
+@media only screen and (max-width: 350px){
+  .select-box {
+    width: 242px;
+  }
+
+  .options-container {
+    width: 244px;
+  }
 }
