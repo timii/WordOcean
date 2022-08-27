@@ -15,13 +15,13 @@
     /* Makes the list elements wrap into the next row */
     float: left;
     color: var(--text-accent-color);
-    transition: var(--standardTransition);
+    transition: color 0.3s ease-in-out;
 }
 
 .word_list_item::after {
     content: ", ";
     color: var(--text-color);
-    transition: var(--standardTransition);
+    transition: color 0.3s ease-in-out;
 }
 
 .word_list_item:last-child::after {

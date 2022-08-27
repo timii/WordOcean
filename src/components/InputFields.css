@@ -29,12 +29,16 @@
 
 .input_word {
     width: 300px;
-    transition: var(--standardTransition);
+    transition-property: background-color, color, border;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 }
 
 .search_container, .input_search {
     cursor: pointer;
-    transition: var(--standardTransition);
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
 }
 
 .search_container {

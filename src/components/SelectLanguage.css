@@ -78,13 +78,13 @@
 
 .select-box .options-container::-webkit-scrollbar {
   width: 8px;
-  background: var(--select-scrollbar);
+  background-color: var(--select-scrollbar);
   border-radius: 0 8px 8px 0;
   transition: var(--standardTransition);
 }
 
 .select-box .options-container::-webkit-scrollbar-thumb {
-  background: var(--select-scrollbar-thumb);
+  background-color: var(--select-scrollbar-thumb);
   border-radius: 0 8px 8px 0;
   transition: var(--standardTransition);
 }
