@@ -15,7 +15,7 @@
 
 ## How To Use
 
-Go to the [site](Link hinzufügen bitte), choose one of the languages from [supported languages](#supported-languages), enter the word you want to know the definition of and press "Search". The results will be shown below.
+Open the [word ocean website](https://timii.github.io/WordOcean/), choose one of the languages from [supported languages](#supported-languages), enter the word you want to know the definition of and press "Search". The results will be shown below.
 
 ## Run locally
 
@@ -31,16 +31,16 @@ It uses the [freeDictionaryAPI](https://dictionaryapi.dev/) to get the informati
 
 ## Supported Languages
 
-* English (US)
-* Spanish
-* French
-* Japanese
-* Russian
-* English (UK)
-* German
-* Italian
-* Korean
-* Brazilian Portuguese
-* Arabic
-* Turkish
-* Hindi
+- English (US)
+- Spanish
+- French
+- Japanese
+- Russian
+- English (UK)
+- German
+- Italian
+- Korean
+- Brazilian Portuguese
+- Arabic
+- Turkish
+- Hindi
