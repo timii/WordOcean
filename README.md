@@ -9,13 +9,18 @@
 </div>
 
 <h2 align="center">Lookup word definitions and additional information in different languages.</h2>
-<br>
-
-(Picture of the Website)
+<!-- <br> -->
 
 ## How To Use
 
 Open the [word ocean website](https://timii.github.io/WordOcean/), choose one of the languages from [supported languages](#supported-languages), enter the word you want to know the definition of and press "Search". The results will be shown below.
+
+<div align="center">
+  <br>
+  <img src="src/images/website_screenshot.png" alt="Word Ocean" width="790%">
+</div>
+
+<br>
 
 ## Run locally
 
