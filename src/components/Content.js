@@ -18,8 +18,6 @@ function Content() {
   const [showInputHint, setShowInputHint] = useState({ langHint: false, wordHint: false });
 
   useEffect(() => {
-    console.log("in useEffect -> validInputs:", validInputs.validLang && validInputs.validWord)
-
     if (hasSearched) {
       setShowInputHint({ langHint: !validInputs.validLang, wordHint: !validInputs.validWord })
     }
@@ -43,14 +41,13 @@ function Content() {
           setIsLoading(false)
           setNotFoundWord(word)
         })
-        .catch((error) => console.log("error is:", error));
+        .catch((error) => console.error("error is:", error));
 
       setClickedSearch(false)
     }
   }, [clickedSearch, hasSearched, isResponseOK, lang, validInputs, word])
 
   const handleSubmit = (e) => {
-    console.log("handleSubmit")
     setValidInputs({ validLang: lang.length > 0 && langLabel.length > 0, validWord: word.length > 0 })
 
     setHasSearched(true);

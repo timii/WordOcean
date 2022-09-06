@@ -6,7 +6,6 @@ function SelectLanguage(props) {
   const [selectedLang, onLangSelected] = useState("");
   const [selectedLangLabel, onLangLabelSelected] = useState("Select Language");
 
-  // useEffect that only runs once at the start
   useEffect(() => {
     const selected = document.querySelector(".selected");
     const optionsContainer = document.querySelector(".options-container");
@@ -45,7 +44,6 @@ function SelectLanguage(props) {
       // Sends language value and label to parent component
       props.onLangChanged(selectedLang);
       props.onLangLabelChanged(selectedLangLabel);
-      // onLangChanged();
     }
   }, [props, selectedLang, selectedLangLabel]);
 
@@ -64,7 +62,7 @@ function SelectLanguage(props) {
             ))}
           </div>
 
-          <div onChange={(e) => console.log(e)} className="selected">
+          <div className="selected">
             {selectedLangLabel}
           </div>
         </div>
